@@ -1,5 +1,7 @@
 import unittest
-from chibi_elasticsearch.snippet import build_index_name, list_indices
+from chibi_elasticsearch.snippet import (
+    build_index_name, list_indices
+)
 
 
 class Test_build_index_name( unittest.TestCase ):
