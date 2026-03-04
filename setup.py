@@ -30,6 +30,6 @@ setup(
     name='chibi_elasticsearch',
     packages=find_packages(include=['chibi_elasticsearch', 'chibi_elasticsearch.*']),
     url='https://github.com/dem4ply/chibi_elasticsearch',
-    version='1.0.0',
+    version='1.1.0',
     zip_safe=False,
 )
