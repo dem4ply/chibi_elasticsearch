@@ -8,7 +8,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = []
+requirements = [ 'chibi>=0.17.0', "elasticsearch_dls=>7,<8" ]
 
 setup(
     author="dem4ply",

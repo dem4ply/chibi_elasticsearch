@@ -11,8 +11,6 @@ chibi_elasticsearch
         :alt: Documentation Status
 
 
-
-
 Package with templates and snippets for elasticsearch
 
 
