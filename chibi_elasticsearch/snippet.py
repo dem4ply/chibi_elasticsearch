@@ -25,3 +25,12 @@ def build_index_name( name, app_name=None, ):
 def list_indices():
     es = connections.get_connection()
     return es.cat.indices( format='json' )
+
+
+def index_exists( model_class ):
+    return model_class._index.exists()
+
+
+def create_index_if_not_exists( model_class ):
+    if not index_exists( model_class ):
+        model_class.init()

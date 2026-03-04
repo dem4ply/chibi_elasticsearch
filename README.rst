@@ -26,10 +26,14 @@ The package is designed to work with elasticsearch_dsl.
 basic use
 *********
 
+models
+======
+
 .. code-block:: python
 
 	from chibi_elasticsearch.models import Chibi_model
 	from chibi_elasticsearch.analyzers import name_space, name
+	from chibi_elasticsearch.snippet import create_index_if_not_exists
 	from elasticsearch_dsl import field
 
 
@@ -42,8 +46,29 @@ basic use
 			}
 		)
 
+	create_index_if_not_exists( Person )
+
 	some_one = Person( name="john smith" )
 	some_one.save()
 	print( "name:", some_one.name )
 	print( "create_at:", some_one.create_at )
 	print( "update_at:", some_one.update_at )
+
+review config
+=============
+
+.. code-block:: python
+
+	from chibi_elasticsearch.config import load_elasticsearch_config, review_elasticsearch_config
+	from chibi.config import configuration
+
+	configuration.elasticsearch.connections.default.hosts = 'localhost'
+	configuration.elasticsearch.connections.default.port = 80
+	configuration.loggers[ 'elasticsearch' ].level = "WARNING"
+
+	# Load connections (e.g., from chibi config)
+	load_elasticsearch_config()
+
+	# Check configuration
+	if not review_elasticsearch_config():
+		raise RuntimeError("Elasticsearch not configured correctly")

@@ -22,7 +22,3 @@ def review_elasticsearch_config():
         )
         return False
     return True
-
-
-def check_index_exists( model_class ):
-    return model_class._index.exists()
