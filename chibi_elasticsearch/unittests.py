@@ -1,4 +1,5 @@
 import logging
+from chibi_elasticsearch.config import get_all_hosts_in_config
 
 
 logger = logging.getLogger( 'chibi_elasticsearch.vcr' )
@@ -9,7 +10,6 @@ except ImportError:
         "No se puede importar los vcrs se nesesita instalar las "
         "dependencias 'pip install chibi_elasticsearch[vcr]'" )
     raise
-from chibi_elasticsearch.config import get_all_hosts_in_config
 
 
 class Chibi_elastic_vcr( VCRTestCase ):

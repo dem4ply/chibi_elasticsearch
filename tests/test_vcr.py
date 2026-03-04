@@ -1,7 +1,3 @@
-import time
-import datetime
-import unittest
-from unittest.mock import patch
 from chibi_elasticsearch.unittests import Chibi_elastic_vcr
 
 
