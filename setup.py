@@ -9,6 +9,8 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [ 'chibi>=0.17.0', "elasticsearch-dsl>7,<8" ]
+vcr_requirements = [ 'vcrpy-unittest>=0.1.7' ]
+
 
 setup(
     author="dem4ply",
@@ -23,6 +25,9 @@ setup(
     ],
     description="Package with templates and snippets for elasticsearch",
     install_requires=requirements,
+    extras_require={
+        'vcr': vcr_requirements,
+    },
     license="WTFPL",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
