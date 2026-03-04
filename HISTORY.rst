@@ -3,6 +3,18 @@ History
 =======
 
 ******************
+1.1.0 (2026-03-03)
+******************
+
+* add logic for build test index using chibi config
+
+	.. code-block:: python
+
+		from chibi.config import configuration
+		configuration.elasticsearch.test_app = True
+		assert build_index_name( 'hello' ) == 'test__hello'
+
+******************
 1.0.0 (2026-03-03)
 ******************
 
